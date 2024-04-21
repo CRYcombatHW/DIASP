@@ -16,26 +16,5 @@
 			services.AddScoped<IUserRepository, UserRepository>();
 			services.AddTransient<UserService>();
 		}
-
-		public void Configure(IApplicationBuilder app, IWebHostEnvironment env) {
-			var builder = WebApplication.CreateBuilder();
-
-			// Add services to the container.
-			builder.Services.AddRazorPages();
-
-			if (!env.IsDevelopment()) {
-				app.UseExceptionHandler("/Error");
-				app.UseHsts();
-			}
-
-			app.UseHttpsRedirection();
-			app.UseStaticFiles();
-
-			app.UseRouting();
-
-			app.UseAuthorization();
-
-			((WebApplication)app).MapRazorPages();
-		}
 	}
 }
