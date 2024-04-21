@@ -1,0 +1,15 @@
+﻿@page
+@model DIASP.Pages.PersonModel
+@{
+	ViewData["Title"] = "Person";
+}
+
+<div class="text-center">
+	<p>Name: @Model.Person.Name</p>
+	<p>Surname: @Model.Person.Surname</p>
+	<p>Age: @Model.Person.Age</p>
+
+	@for (int i = 0; i < 10; i++) {
+		<div>test @i</div>
+	}
+</div>

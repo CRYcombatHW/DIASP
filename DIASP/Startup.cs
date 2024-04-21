@@ -1,4 +1,7 @@
-﻿namespace DIASP
+﻿using DIASP.Abstract;
+using DIASP.Services;
+
+namespace DIASP
 {
 	public class Startup
 	{
@@ -9,12 +12,13 @@
 		}
 
 		public void OldConfigureService() {
-			UserService service = new UserService();
+			PersonService service = new PersonService();
 		}
 
 		public void ConfigureService(IServiceCollection services) {
-			services.AddScoped<IUserRepository, UserRepository>();
-			services.AddTransient<UserService>();
+			services.AddScoped<IPersonOutputService, PersonOutputService>();
+
+			services.AddRazorPages();
 		}
 	}
 }
